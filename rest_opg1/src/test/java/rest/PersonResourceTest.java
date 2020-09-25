@@ -151,7 +151,7 @@ public class PersonResourceTest {
     public void testAddPerson(){
         given()
             .contentType(ContentType.JSON)
-            .body(new PersonDTO("Emil", "Andersen", "2112211"))
+            .body(new PersonDTO("Emil", "Andersen", "2112211", "SomeRoad", "000", "Nothingham"))
             .when()
             .post("person")
             .then()
@@ -290,7 +290,7 @@ public class PersonResourceTest {
 
             given()
             .contentType(ContentType.JSON)
-            .body(new PersonDTO("", "Andersen", "2112211"))
+            .body(new PersonDTO("", "Andersen", "2112211", "SomeRoad", "000", "Nothingham"))
             .when()
             .post("person")
             .then()
