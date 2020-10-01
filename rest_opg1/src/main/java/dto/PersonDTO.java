@@ -18,20 +18,29 @@ public class PersonDTO {
     private String firstName;
     private String lastName;
     private String phone;
+    private String city;
+    private String street;
+    private String zip;
     
     public PersonDTO(Person p) {
         this.firstName = p.getFirstName();
         this.lastName = p.getLastName();
         this.phone = p.getPhone();
         this.id = p.getP_id();
+        this.street = p.getAddress().getStreet();
+        this.zip = p.getAddress().getZip();
+        this.city = p.getAddress().getCity();
     }
     public PersonDTO() {}
 
     // Til test:
-    public PersonDTO(String firstName, String lastName, String phone) {
+    public PersonDTO(String firstName, String lastName, String phone, String street, String zip, String city) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
+        this.street = street;
+        this.zip = zip;
+        this.city = city;
     }
 
     public long getId() {
@@ -66,6 +75,32 @@ public class PersonDTO {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+    
+    
 
     @Override
     public int hashCode() {

@@ -17,10 +17,11 @@ import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 //Uncomment the line below, to temporarily disable this test
-//@Disabled
+@Disabled
 public class PersonFacadeTest {
     
 
@@ -128,13 +129,16 @@ public class PersonFacadeTest {
         String firstName = "Karen";
         String lastName = "Poulsen";
         String phone = "20202020202";
+        String street = "SomeRoad";
+        String zip = "000";
+        String city = "Nothingham";
         
         EntityManagerFactory _emf = null;
         PersonFacade pFac = PersonFacade.getFacadeExample(_emf);
         
-        PersonDTO result = pFac.addPerson(firstName, lastName, phone);
+        PersonDTO result = pFac.addPerson(firstName, lastName, phone, street, zip, city);
         
-        PersonDTO expResult = new PersonDTO(firstName, lastName, phone);
+        PersonDTO expResult = new PersonDTO(firstName, lastName, phone, street, zip, city);
         expResult.setId(expResult.getId());
         assertEquals(expResult.getFirstName(), result.getFirstName());
     }
