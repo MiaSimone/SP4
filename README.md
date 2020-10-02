@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/MiaSimone/SP4.svg?branch=master)](https://travis-ci.com/MiaSimone/SP4)
+
 # SP4
 Opgaver om rest, exceptions og entity klasser med relationer.
 
